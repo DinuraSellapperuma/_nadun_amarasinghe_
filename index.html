@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadun Amarasinghe - Coming Soon</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes rotate {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .animate-float {
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .animate-rotate {
+            animation: rotate 20s linear infinite;
+        }
+
+        .delay-500 { animation-delay: 0.5s; }
+        .delay-800 { animation-delay: 0.8s; }
+        .delay-1100 { animation-delay: 1.1s; }
+        .delay-1400 { animation-delay: 1.4s; }
+        .delay-1700 { animation-delay: 1.7s; }
+        .delay-2000 { animation-delay: 2s; }
+        .delay-2300 { animation-delay: 2.3s; }
+
+        .float-delay-0 { animation-delay: 0s; }
+        .float-delay-1 { animation-delay: 1s; }
+        .float-delay-2 { animation-delay: 2s; }
+        .float-delay-4 { animation-delay: 4s; }
+
+        .opacity-0 { opacity: 0; }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-white to-gray-50 text-black overflow-hidden min-h-screen">
+    
+    <!-- Floating Elements -->
+    <div class="fixed inset-0 pointer-events-none -z-10">
+        <div class="absolute w-24 h-24 border border-black border-opacity-10 rounded-full top-1/5 left-1/12 animate-float float-delay-0"></div>
+        <div class="absolute w-16 h-16 border border-black border-opacity-10 rounded-full top-3/5 right-1/6 animate-float float-delay-2"></div>
+        <div class="absolute w-20 h-20 border border-black border-opacity-10 rounded-full bottom-1/3 left-1/5 animate-float float-delay-4"></div>
+        <div class="absolute w-10 h-10 border border-black border-opacity-10 rounded-full top-2/5 right-1/3 animate-float float-delay-1"></div>
+    </div>
+
+    <!-- Geometric Accent -->
+    <div class="fixed top-1/2 left-1/2 w-48 h-48 border border-black border-opacity-5 -z-10 animate-rotate"></div>
+
+    <!-- Main Container -->
+    <div class="min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 text-center relative">
+        
+        <!-- Logo/Name -->
+        <div class="opacity-0 animate-fade-in-up delay-500">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-light tracking-widest mb-4 uppercase">
+                Nadun Amarasinghe
+            </h1>
+        </div>
+
+        <!-- Tagline -->
+        <div class="opacity-0 animate-fade-in-up delay-800">
+            <p class="text-sm sm:text-base lg:text-lg font-normal tracking-wider mb-8 sm:mb-12 uppercase opacity-70">
+                Professional Portfolio
+            </p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="max-w-2xl mx-auto">
+            
+            <!-- Coming Soon -->
+            <div class="opacity-0 animate-fade-in-up delay-1100">
+                <h2 class="text-4xl sm:text-5xl lg:text-6xl font-thin tracking-widest mb-6 sm:mb-8 uppercase">
+                    Coming Soon
+                </h2>
+            </div>
+
+            <!-- Description -->
+            <div class="opacity-0 animate-fade-in-up delay-1400">
+                <p class="text-lg sm:text-xl lg:text-2xl leading-relaxed mb-8 sm:mb-12 opacity-80 font-light px-4">
+                    Something amazing is in the works. My new portfolio website is launching soon 
+                    with fresh content, innovative design, and exciting projects to showcase.
+                </p>
+            </div>
+
+            <!-- Email Signup -->
+            <div class="opacity-0 animate-fade-in-up delay-1700">
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-8 sm:mb-12">
+                    <input 
+                        type="email" 
+                        id="emailInput"
+                        placeholder="Enter your email address" 
+                        class="w-full sm:w-80 px-6 py-4 text-base bg-white border-2 border-gray-300 text-black transition-all duration-300 focus:outline-none focus:border-black"
+                    >
+                    <button 
+                        onclick="handleNotify()"
+                        class="w-full sm:w-auto px-8 py-4 bg-black text-white text-base font-medium cursor-pointer uppercase tracking-wider transition-all duration-300 hover:bg-gray-800 hover:-translate-y-0.5"
+                    >
+                        Notify Me
+                    </button>
+                </div>
+                
+                <!-- Success Message -->
+                <div id="successMessage" class="text-gray-600 mt-4 text-base opacity-0 transition-opacity duration-300">
+                    Thank you! We'll notify you when the site launches.
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="opacity-0 animate-fade-in-up delay-2000">
+                <div class="flex justify-center gap-6 sm:gap-8 mb-8 sm:mb-12">
+                    <a href="#" class="text-black text-lg opacity-70 transition-all duration-300 hover:opacity-100 hover:-translate-y-1 tracking-wider relative group">
+                        LinkedIn
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-black text-lg opacity-70 transition-all duration-300 hover:opacity-100 hover:-translate-y-1 tracking-wider relative group">
+                        Instagram
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                    <a href="#" class="text-black text-lg opacity-70 transition-all duration-300 hover:opacity-100 hover:-translate-y-1 tracking-wider relative group">
+                        Email
+                        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-0.5 bg-black transition-all duration-300 group-hover:w-full"></span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 opacity-0 animate-fade-in-up delay-2300">
+            <p class="text-sm opacity-60 tracking-wider">
+                © 2025 Nadun Amarasinghe • Launching Soon
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        function handleNotify() {
+            const emailInput = document.getElementById('emailInput');
+            const successMessage = document.getElementById('successMessage');
+            
+            if (emailInput.value && emailInput.value.includes('@')) {
+                // Store email (in a real app, this would go to a server)
+                console.log('Email submitted:', emailInput.value);
+                
+                // Show success message
+                successMessage.classList.remove('opacity-0');
+                successMessage.classList.add('opacity-100');
+                
+                // Clear input
+                emailInput.value = '';
+                
+                // Hide success message after 3 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('opacity-100');
+                    successMessage.classList.add('opacity-0');
+                }, 3000);
+            } else {
+                alert('Please enter a valid email address');
+            }
+        }
+
+        // Handle Enter key press on email input
+        document.getElementById('emailInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                handleNotify();
+            }
+        });
+
+        // Add subtle mouse movement effect to floating elements
+        document.addEventListener('mousemove', function(e) {
+            const circles = document.querySelectorAll('.animate-float');
+            circles.forEach((circle, index) => {
+                const speed = (index + 1) * 0.0001;
+                const x = (e.clientX * speed);
+                const y = (e.clientY * speed);
+                circle.style.transform += ` translate(${x}px, ${y}px)`;
+            });
+        });
+
+        // Responsive font size adjustments on window resize
+        function adjustFontSizes() {
+            const width = window.innerWidth;
+            const comingSoon = document.querySelector('h2');
+            const name = document.querySelector('h1');
+            
+            if (width < 640) { // sm breakpoint
+                comingSoon.classList.remove('text-6xl');
+                comingSoon.classList.add('text-4xl');
+                name.classList.remove('text-5xl');
+                name.classList.add('text-3xl');
+            } else if (width < 1024) { // lg breakpoint
+                comingSoon.classList.remove('text-4xl', 'text-6xl');
+                comingSoon.classList.add('text-5xl');
+                name.classList.remove('text-3xl', 'text-5xl');
+                name.classList.add('text-4xl');
+            } else {
+                comingSoon.classList.remove('text-4xl', 'text-5xl');
+                comingSoon.classList.add('text-6xl');
+                name.classList.remove('text-3xl', 'text-4xl');
+                name.classList.add('text-5xl');
+            }
+        }
+
+        // Initial call and resize listener
+        adjustFontSizes();
+        window.addEventListener('resize', adjustFontSizes);
+    </script>
+</body>
+</html>
